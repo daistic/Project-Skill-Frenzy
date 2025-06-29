@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://cjinrdxcjoc5i"]
+
+[ext_resource type="Script" uid="uid://bs4kyce6ithed" path="res://Scripts/chainsaw.gd" id="1_0ssji"]
+[ext_resource type="Texture2D" uid="uid://mngm17rgt5ua" path="res://Assets/chainsaw_projectile.png" id="1_jcl7s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ssji"]
+atlas = ExtResource("1_jcl7s")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fehc6"]
+atlas = ExtResource("1_jcl7s")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caivu"]
+atlas = ExtResource("1_jcl7s")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6apd2"]
+atlas = ExtResource("1_jcl7s")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acdk3"]
+atlas = ExtResource("1_jcl7s")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw4il"]
+atlas = ExtResource("1_jcl7s")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65qe8"]
+atlas = ExtResource("1_jcl7s")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ibop"]
+atlas = ExtResource("1_jcl7s")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0r4q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ssji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fehc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caivu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6apd2")
+}],
+"loop": false,
+"name": &"destroyed",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acdk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw4il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65qe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ibop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acdk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65qe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw4il")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynx84"]
+radius = 27.0
+
+[node name="chainsaw" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_0ssji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h0r4q")
+animation = &"destroyed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ynx84")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

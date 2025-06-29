@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://j3wo3pg8b8jy"]
+
+[ext_resource type="Texture2D" uid="uid://cspw8yq76068a" path="res://Assets/white_texture.png" id="1_337u7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_337u7"]
+size = Vector2(32.5676, 749)
+
+[node name="Level" type="Node2D"]
+
+[node name="Left" type="StaticBody2D" parent="."]
+position = Vector2(-11, 0)
+
+[node name="RedTexture" type="Sprite2D" parent="Left"]
+modulate = Color(0.85098, 0.341176, 0.388235, 1)
+position = Vector2(0, 325)
+scale = Vector2(1, 23.44)
+texture = ExtResource("1_337u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(1, 323.5)
+shape = SubResource("RectangleShape2D_337u7")
+
+[node name="Right" type="StaticBody2D" parent="."]
+position = Vector2(1162, 0)
+
+[node name="RedTexture" type="Sprite2D" parent="Right"]
+modulate = Color(0.85098, 0.341176, 0.388235, 1)
+position = Vector2(0, 325)
+scale = Vector2(1, 23.44)
+texture = ExtResource("1_337u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(1, 323.5)
+shape = SubResource("RectangleShape2D_337u7")
+
+[node name="Top" type="StaticBody2D" parent="."]
+position = Vector2(1084, -12)
+rotation = 1.5708
+scale = Vector2(1, 1.56)
+
+[node name="RedTexture" type="Sprite2D" parent="Top"]
+modulate = Color(0.85098, 0.341176, 0.388235, 1)
+position = Vector2(0, 325)
+scale = Vector2(1, 23.44)
+texture = ExtResource("1_337u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(1, 323.5)
+shape = SubResource("RectangleShape2D_337u7")
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2(1085, 635)
+rotation = 1.5708
+scale = Vector2(2.96, 1.56)
+
+[node name="RedTexture" type="Sprite2D" parent="Bottom"]
+modulate = Color(0.85098, 0.341176, 0.388235, 1)
+position = Vector2(0, 325)
+scale = Vector2(1, 23.44)
+texture = ExtResource("1_337u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(0.270264, 321.795)
+shape = SubResource("RectangleShape2D_337u7")
+
+[node name="Middle" type="StaticBody2D" parent="."]
+position = Vector2(741, 446)
+rotation = 1.5708
+scale = Vector2(1, 0.36)
+collision_mask = 3
+
+[node name="RedTexture" type="Sprite2D" parent="Middle"]
+modulate = Color(0.85098, 0.341176, 0.388235, 1)
+position = Vector2(0, 325)
+scale = Vector2(1, 23.44)
+texture = ExtResource("1_337u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle"]
+position = Vector2(0.270264, 321.795)
+shape = SubResource("RectangleShape2D_337u7")
+
+[node name="Middle2" type="StaticBody2D" parent="."]
+position = Vector2(1068, 288)
+rotation = 1.5708
+scale = Vector2(1, 0.36)
+
+[node name="RedTexture" type="Sprite2D" parent="Middle2"]
+modulate = Color(0.85098, 0.341176, 0.388235, 1)
+position = Vector2(0, 325)
+scale = Vector2(1, 23.44)
+texture = ExtResource("1_337u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle2"]
+position = Vector2(0.270264, 321.795)
+shape = SubResource("RectangleShape2D_337u7")
+
+[node name="Middle3" type="StaticBody2D" parent="."]
+position = Vector2(315, 172)
+rotation = 1.5708
+scale = Vector2(1.04202, 0.362648)
+
+[node name="RedTexture" type="Sprite2D" parent="Middle3"]
+modulate = Color(0.85098, 0.341176, 0.388235, 1)
+position = Vector2(0, 325)
+scale = Vector2(1, 23.44)
+texture = ExtResource("1_337u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle3"]
+position = Vector2(0.270264, 321.795)
+shape = SubResource("RectangleShape2D_337u7")
+
+[node name="Middle4" type="StaticBody2D" parent="."]
+position = Vector2(423, 305)
+rotation = 1.5708
+scale = Vector2(1, 0.160002)
+
+[node name="RedTexture" type="Sprite2D" parent="Middle4"]
+modulate = Color(0.85098, 0.341176, 0.388235, 1)
+position = Vector2(0, 325)
+scale = Vector2(1, 23.44)
+texture = ExtResource("1_337u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle4"]
+position = Vector2(0.270264, 321.795)
+shape = SubResource("RectangleShape2D_337u7")

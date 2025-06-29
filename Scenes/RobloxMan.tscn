@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp4w7d26o2igx"]
+
+[ext_resource type="Script" uid="uid://cuupbw5b3fpe0" path="res://Scripts/roblox_man.gd" id="1_6n45u"]
+[ext_resource type="Texture2D" uid="uid://dc00fkysaud7v" path="res://Assets/roblox man srpite sheet.png" id="1_tjywl"]
+[ext_resource type="PackedScene" uid="uid://cgu4acnx1l67h" path="res://Scenes/Sword.tscn" id="3_0xmp2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n45u"]
+atlas = ExtResource("1_tjywl")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xmp2"]
+atlas = ExtResource("1_tjywl")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnlp2"]
+atlas = ExtResource("1_tjywl")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d57b3"]
+atlas = ExtResource("1_tjywl")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exds0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n45u")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xmp2")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnlp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d57b3")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjywl"]
+size = Vector2(52, 62)
+
+[node name="RobloxMan" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_6n45u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_exds0")
+animation = &"Walk"
+frame = 1
+frame_progress = 0.326974
+
+[node name="Body" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_tjywl")
+
+[node name="Sword" parent="." instance=ExtResource("3_0xmp2")]
+visible = false
+
+[node name="ActionTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]
