@@ -9,6 +9,8 @@ size = Vector2(32.5676, 749)
 
 [node name="Left" type="StaticBody2D" parent="."]
 position = Vector2(-11, 0)
+collision_layer = 2
+collision_mask = 15
 
 [node name="RedTexture" type="Sprite2D" parent="Left"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -22,6 +24,8 @@ shape = SubResource("RectangleShape2D_337u7")
 
 [node name="Right" type="StaticBody2D" parent="."]
 position = Vector2(1162, 0)
+collision_layer = 2
+collision_mask = 15
 
 [node name="RedTexture" type="Sprite2D" parent="Right"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -37,6 +41,8 @@ shape = SubResource("RectangleShape2D_337u7")
 position = Vector2(1084, -12)
 rotation = 1.5708
 scale = Vector2(1, 1.56)
+collision_layer = 2
+collision_mask = 15
 
 [node name="RedTexture" type="Sprite2D" parent="Top"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -52,6 +58,8 @@ shape = SubResource("RectangleShape2D_337u7")
 position = Vector2(1085, 635)
 rotation = 1.5708
 scale = Vector2(2.96, 1.56)
+collision_layer = 2
+collision_mask = 15
 
 [node name="RedTexture" type="Sprite2D" parent="Bottom"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -67,7 +75,8 @@ shape = SubResource("RectangleShape2D_337u7")
 position = Vector2(741, 446)
 rotation = 1.5708
 scale = Vector2(1, 0.36)
-collision_mask = 3
+collision_layer = 2
+collision_mask = 15
 
 [node name="RedTexture" type="Sprite2D" parent="Middle"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -83,6 +92,8 @@ shape = SubResource("RectangleShape2D_337u7")
 position = Vector2(1068, 288)
 rotation = 1.5708
 scale = Vector2(1, 0.36)
+collision_layer = 2
+collision_mask = 15
 
 [node name="RedTexture" type="Sprite2D" parent="Middle2"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -98,6 +109,8 @@ shape = SubResource("RectangleShape2D_337u7")
 position = Vector2(315, 172)
 rotation = 1.5708
 scale = Vector2(1.04202, 0.362648)
+collision_layer = 2
+collision_mask = 15
 
 [node name="RedTexture" type="Sprite2D" parent="Middle3"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -113,6 +126,8 @@ shape = SubResource("RectangleShape2D_337u7")
 position = Vector2(423, 305)
 rotation = 1.5708
 scale = Vector2(1, 0.160002)
+collision_layer = 2
+collision_mask = 15
 
 [node name="RedTexture" type="Sprite2D" parent="Middle4"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)

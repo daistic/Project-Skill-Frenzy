@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbgw862emufxe"]
+[gd_scene load_steps=4 format=3 uid="uid://bbgw862emufxe"]
 
 [ext_resource type="Texture2D" uid="uid://bnducu8cda3xb" path="res://Assets/pink_flag.png" id="1_1hkyp"]
+[ext_resource type="Script" uid="uid://b0qb0ur4fjs06" path="res://Scripts/flag.gd" id="1_i6t4d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6t4d"]
-size = Vector2(62, 111)
+size = Vector2(31, 111)
 
 [node name="flag" type="Area2D"]
+script = ExtResource("1_i6t4d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -13,5 +15,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_1hkyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 7.5)
+position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_i6t4d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
