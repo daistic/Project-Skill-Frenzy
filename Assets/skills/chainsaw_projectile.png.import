@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi8xi56a63yw3"
-path="res://.godot/imported/purple_hook.png-08c5317e3d87e2dc4d1901018708939d.ctex"
+uid="uid://mngm17rgt5ua"
+path="res://.godot/imported/chainsaw_projectile.png-36a61f5ad82ef3fe4721c57dbbd46320.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/purple_hook.png"
-dest_files=["res://.godot/imported/purple_hook.png-08c5317e3d87e2dc4d1901018708939d.ctex"]
+source_file="res://Assets/skills/chainsaw_projectile.png"
+dest_files=["res://.godot/imported/chainsaw_projectile.png-36a61f5ad82ef3fe4721c57dbbd46320.ctex"]
 
 [params]
 

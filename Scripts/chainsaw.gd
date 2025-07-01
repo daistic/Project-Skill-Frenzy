@@ -7,10 +7,11 @@ func _ready() -> void:
 	if not projectile_facing_right:
 		move_speed = - move_speed
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	position.x += move_speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
+	print(body.name)
 	if body is StaticBody2D:
 		move_speed = 0
 		animated_sprite_2d.play("destroyed")

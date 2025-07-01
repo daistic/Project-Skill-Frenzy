@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvj80qgcxatnu"
-path="res://.godot/imported/time_bomb.png-c9f20e82ca1a4c49aee32967ea851abd.ctex"
+uid="uid://cdgwdytk4qtoi"
+path="res://.godot/imported/tennis_ball.png-d8b6d0dc0410dda4df49bfd007679a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/time_bomb.png"
-dest_files=["res://.godot/imported/time_bomb.png-c9f20e82ca1a4c49aee32967ea851abd.ctex"]
+source_file="res://Assets/skills/tennis_ball.png"
+dest_files=["res://.godot/imported/tennis_ball.png-d8b6d0dc0410dda4df49bfd007679a40.ctex"]
 
 [params]
 

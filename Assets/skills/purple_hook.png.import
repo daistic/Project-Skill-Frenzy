@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2l58xvc5o2f0"
-path="res://.godot/imported/fireball.png-fa5f0d567eec0e5ec34d80e08239efe3.ctex"
+uid="uid://bi8xi56a63yw3"
+path="res://.godot/imported/purple_hook.png-85826f23e2c5189879c569df1a983056.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fireball.png"
-dest_files=["res://.godot/imported/fireball.png-fa5f0d567eec0e5ec34d80e08239efe3.ctex"]
+source_file="res://Assets/skills/purple_hook.png"
+dest_files=["res://.godot/imported/purple_hook.png-85826f23e2c5189879c569df1a983056.ctex"]
 
 [params]
 

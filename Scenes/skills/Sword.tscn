@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgu4acnx1l67h"]
 
-[ext_resource type="Texture2D" uid="uid://bvkb5ppvrpcwq" path="res://Assets/sword.png" id="1_suca6"]
+[ext_resource type="Texture2D" uid="uid://bvkb5ppvrpcwq" path="res://Assets/skills/sword.png" id="1_suca6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vnlp2"]
 radius = 16.0

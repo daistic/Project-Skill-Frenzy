@@ -20,6 +20,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		_normal_attack()
 	if event.is_action_pressed("skill_one") and can_act:
 		_use_skill_one()
+	if event.is_action_pressed("skill_two") and can_act:
+		_use_skill_two()
 	if event.is_action_pressed("debug"):
 		_print_debug()
 
@@ -85,8 +87,24 @@ func _use_skill_one() -> void:
 			instance.projectile_facing_right = !animated_sprite_2d.flip_h
 			instance.position = position
 			get_tree().root.add_child(instance)
+		else:
+			instance.position = position
+			get_tree().root.add_child(instance)
 		
 		skills.remove_at(0)
+
+func _use_skill_two() -> void:
+	if skills.size() >= 2:
+		var instance = skills[1].instantiate()
+		if instance is ProjectileSkill:
+			instance.projectile_facing_right = !animated_sprite_2d.flip_h
+			instance.position = position
+			get_tree().root.add_child(instance)
+		else:
+			instance.position = position
+			get_tree().root.add_child(instance)
+		
+		skills.remove_at(1)
 
 func _print_debug() -> void:
 	print(skills)

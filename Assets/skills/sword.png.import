@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mngm17rgt5ua"
-path="res://.godot/imported/chainsaw_projectile.png-4c7cd2db43a45f6466dde958d9c7af36.ctex"
+uid="uid://bvkb5ppvrpcwq"
+path="res://.godot/imported/sword.png-d1173e8154dedd40057b3f8c0bff7e09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/chainsaw_projectile.png"
-dest_files=["res://.godot/imported/chainsaw_projectile.png-4c7cd2db43a45f6466dde958d9c7af36.ctex"]
+source_file="res://Assets/skills/sword.png"
+dest_files=["res://.godot/imported/sword.png-d1173e8154dedd40057b3f8c0bff7e09.ctex"]
 
 [params]
 

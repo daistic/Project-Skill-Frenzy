@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw0en64ltcn0h"]
+
+[ext_resource type="Script" uid="uid://detjcykhp1x0d" path="res://Scripts/tennis_ball.gd" id="1_nudrs"]
+[ext_resource type="Texture2D" uid="uid://cdgwdytk4qtoi" path="res://Assets/skills/tennis_ball.png" id="2_fdwen"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdwen"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdwen"]
+radius = 18.0
+
+[node name="Tennis ball" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 10
+physics_material_override = SubResource("PhysicsMaterial_fdwen")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_nudrs")
+impulse = Vector2(600, -250)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_fdwen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fdwen")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

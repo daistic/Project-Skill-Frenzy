@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cuupbw5b3fpe0" path="res://Scripts/roblox_man.gd" id="1_6n45u"]
 [ext_resource type="Texture2D" uid="uid://dc00fkysaud7v" path="res://Assets/roblox man srpite sheet.png" id="1_tjywl"]
-[ext_resource type="PackedScene" uid="uid://cgu4acnx1l67h" path="res://Scenes/Sword.tscn" id="3_0xmp2"]
+[ext_resource type="PackedScene" uid="uid://cgu4acnx1l67h" path="res://Scenes/skills/Sword.tscn" id="3_0xmp2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6n45u"]
 atlas = ExtResource("1_tjywl")
