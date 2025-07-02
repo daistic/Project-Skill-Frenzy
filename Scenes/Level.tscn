@@ -72,7 +72,7 @@ position = Vector2(0.270264, 321.795)
 shape = SubResource("RectangleShape2D_337u7")
 
 [node name="Middle" type="StaticBody2D" parent="."]
-position = Vector2(741, 446)
+position = Vector2(759, 438)
 rotation = 1.5708
 scale = Vector2(1, 0.36)
 collision_layer = 2
@@ -106,9 +106,9 @@ position = Vector2(0.270264, 321.795)
 shape = SubResource("RectangleShape2D_337u7")
 
 [node name="Middle3" type="StaticBody2D" parent="."]
-position = Vector2(315, 172)
+position = Vector2(327, 151)
 rotation = 1.5708
-scale = Vector2(1.04202, 0.362648)
+scale = Vector2(1.042, 0.318)
 collision_layer = 2
 collision_mask = 15
 
@@ -122,19 +122,19 @@ texture = ExtResource("1_337u7")
 position = Vector2(0.270264, 321.795)
 shape = SubResource("RectangleShape2D_337u7")
 
-[node name="Middle4" type="StaticBody2D" parent="."]
-position = Vector2(423, 305)
-rotation = 1.5708
-scale = Vector2(1, 0.160002)
+[node name="Middle5" type="StaticBody2D" parent="."]
+position = Vector2(468, 307)
+rotation = 2.18166
+scale = Vector2(1, 0.18)
 collision_layer = 2
 collision_mask = 15
 
-[node name="RedTexture" type="Sprite2D" parent="Middle4"]
+[node name="RedTexture" type="Sprite2D" parent="Middle5"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
 position = Vector2(0, 325)
 scale = Vector2(1, 23.44)
 texture = ExtResource("1_337u7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle5"]
 position = Vector2(0.270264, 321.795)
 shape = SubResource("RectangleShape2D_337u7")

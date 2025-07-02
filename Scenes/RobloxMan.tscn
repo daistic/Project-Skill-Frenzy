@@ -50,8 +50,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjywl"]
-size = Vector2(52, 62)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xmp2"]
+radius = 18.0
+height = 62.0
 
 [node name="RobloxMan" type="CharacterBody2D"]
 z_index = 5
@@ -68,7 +69,7 @@ frame_progress = 0.326974
 
 [node name="Body" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_tjywl")
+shape = SubResource("CapsuleShape2D_0xmp2")
 
 [node name="Sword" parent="." instance=ExtResource("3_0xmp2")]
 visible = false

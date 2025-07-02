@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://gvx18nkpacwq"]
+[gd_scene load_steps=7 format=3 uid="uid://gvx18nkpacwq"]
 
 [ext_resource type="Texture2D" uid="uid://cspw8yq76068a" path="res://Assets/white_texture.png" id="1_wrhoe"]
 [ext_resource type="PackedScene" uid="uid://j3wo3pg8b8jy" path="res://Scenes/Level.tscn" id="2_ilmpw"]
 [ext_resource type="PackedScene" uid="uid://dp4w7d26o2igx" path="res://Scenes/RobloxMan.tscn" id="3_7375l"]
 [ext_resource type="PackedScene" uid="uid://bbgw862emufxe" path="res://Scenes/Flag.tscn" id="4_dci62"]
+[ext_resource type="PackedScene" uid="uid://by3cejdflsnuy" path="res://Scenes/enemies/Turtle.tscn" id="6_aw1t8"]
 [ext_resource type="PackedScene" uid="uid://bw0en64ltcn0h" path="res://Scenes/skills/TennisBall.tscn" id="6_c43mv"]
 
 [node name="LevelBase" type="Node2D"]
@@ -25,6 +26,9 @@ position = Vector2(1054, 209)
 _test_skill_scene = ExtResource("6_c43mv")
 
 [node name="flag2" parent="." instance=ExtResource("4_dci62")]
-position = Vector2(97, 92)
+position = Vector2(132, 72)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="turtle" parent="." instance=ExtResource("6_aw1t8")]
+position = Vector2(589, 235)
