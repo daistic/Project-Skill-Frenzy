@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://gvx18nkpacwq"]
+[gd_scene load_steps=8 format=3 uid="uid://gvx18nkpacwq"]
 
 [ext_resource type="Texture2D" uid="uid://cspw8yq76068a" path="res://Assets/white_texture.png" id="1_wrhoe"]
 [ext_resource type="PackedScene" uid="uid://j3wo3pg8b8jy" path="res://Scenes/Level.tscn" id="2_ilmpw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bbgw862emufxe" path="res://Scenes/Flag.tscn" id="4_dci62"]
 [ext_resource type="PackedScene" uid="uid://by3cejdflsnuy" path="res://Scenes/enemies/Turtle.tscn" id="6_aw1t8"]
 [ext_resource type="PackedScene" uid="uid://bw0en64ltcn0h" path="res://Scenes/skills/TennisBall.tscn" id="6_c43mv"]
+[ext_resource type="PackedScene" uid="uid://dwoh1tyj2o5dx" path="res://Scenes/enemies/Zombo.tscn" id="7_aw1t8"]
 
 [node name="LevelBase" type="Node2D"]
 
@@ -22,13 +23,16 @@ texture = ExtResource("1_wrhoe")
 position = Vector2(168, 493)
 
 [node name="flag" parent="." instance=ExtResource("4_dci62")]
-position = Vector2(1054, 209)
+position = Vector2(1017, 338)
 _test_skill_scene = ExtResource("6_c43mv")
 
 [node name="flag2" parent="." instance=ExtResource("4_dci62")]
-position = Vector2(132, 72)
+position = Vector2(86, 109)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="turtle" parent="." instance=ExtResource("6_aw1t8")]
 position = Vector2(589, 235)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_aw1t8")]
+position = Vector2(479, 418)
