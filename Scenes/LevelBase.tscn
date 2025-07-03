@@ -32,7 +32,7 @@ position = Vector2(86, 109)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="turtle" parent="." instance=ExtResource("6_aw1t8")]
-position = Vector2(589, 235)
+position = Vector2(1119, 336)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_aw1t8")]
 position = Vector2(479, 418)

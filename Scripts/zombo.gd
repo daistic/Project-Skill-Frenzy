@@ -1,5 +1,11 @@
 extends RigidBody2D
 
+class_name Zombo
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+@export var health: int = 1
+@export var points: int = 125
 @export var _move_speed: float = 125.0
 @export var _acceleration_force: float = 100.0
 @export var _jump_power: float = 650.0
@@ -11,6 +17,8 @@ func _physics_process(_delta: float) -> void:
 	
 	var force_x = (target_velocity_x - current_velocity_x) * _acceleration_force
 	apply_central_force(Vector2(force_x, 0))
+	
+	_handle_sprite_facing()
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Wall"):
@@ -21,3 +29,9 @@ func _on_body_entered(body: Node) -> void:
 func jump() -> void:
 	apply_central_impulse(Vector2(0, -_jump_power))
 	print ("tried jumping")
+
+func _handle_sprite_facing() -> void:
+	if _move_direction == -1:
+		animated_sprite_2d.flip_h = false
+	if _move_direction == 1:
+		animated_sprite_2d.flip_h = true
