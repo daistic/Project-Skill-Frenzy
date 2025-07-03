@@ -48,6 +48,7 @@ _data = {
 }
 
 [node name="time_bomb" type="Area2D"]
+collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_c4oek")
 

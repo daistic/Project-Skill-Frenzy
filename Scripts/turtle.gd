@@ -5,8 +5,8 @@ class_name Turtle
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var health: int = 1
-@export var points: int = 175
-@export var _move_speed: float = 200.0
+@export var points: int = 225
+@export var _move_speed: float = 225.0
 @export var _acceleration_force: float = 100.0
 @export var _flap_power: float = 500.0
 var _move_direction: int = -1

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WaveResource" load_steps=4 format=3 uid="uid://b20gw3drfyybf"]
+
+[ext_resource type="PackedScene" uid="uid://dwoh1tyj2o5dx" path="res://Scenes/enemies/Zombo.tscn" id="1_iefsj"]
+[ext_resource type="Script" uid="uid://bjrev8473hl3p" path="res://Scripts/wave_resource.gd" id="1_n2u66"]
+[ext_resource type="PackedScene" uid="uid://by3cejdflsnuy" path="res://Scenes/enemies/Turtle.tscn" id="2_q3gaw"]
+
+[resource]
+script = ExtResource("1_n2u66")
+enemies = Array[PackedScene]([ExtResource("1_iefsj"), ExtResource("2_q3gaw"), ExtResource("2_q3gaw"), ExtResource("1_iefsj")])
+metadata/_custom_type_script = "uid://bjrev8473hl3p"

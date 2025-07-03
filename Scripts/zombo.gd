@@ -28,7 +28,6 @@ func _on_body_entered(body: Node) -> void:
 
 func jump() -> void:
 	apply_central_impulse(Vector2(0, -_jump_power))
-	print ("tried jumping")
 
 func _handle_sprite_facing() -> void:
 	if _move_direction == -1:

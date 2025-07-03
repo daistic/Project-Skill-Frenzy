@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd5een7448i8q"
-path="res://.godot/imported/zombo.png-dd4b93ed93298fa1081dc909cc2d1998.ctex"
+uid="uid://cpxucbsg22l2a"
+path="res://.godot/imported/armor_zombo.png-8c25d78c0f2a496a68a9764b68b405c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/zombo.png"
-dest_files=["res://.godot/imported/zombo.png-dd4b93ed93298fa1081dc909cc2d1998.ctex"]
+source_file="res://Assets/Zombo/armor_zombo.png"
+dest_files=["res://.godot/imported/armor_zombo.png-8c25d78c0f2a496a68a9764b68b405c2.ctex"]
 
 [params]
 
