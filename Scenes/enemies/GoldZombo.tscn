@@ -44,7 +44,8 @@ lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 4
 script = ExtResource("1_qgrnv")
-_move_speed = 450.0
+points = 400
+_move_speed = 475.0
 _jump_power = 800.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

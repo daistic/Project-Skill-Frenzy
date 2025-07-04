@@ -1,10 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbgw862emufxe"]
+[gd_scene load_steps=9 format=3 uid="uid://bbgw862emufxe"]
 
 [ext_resource type="Texture2D" uid="uid://bnducu8cda3xb" path="res://Assets/pink_flag.png" id="1_1hkyp"]
 [ext_resource type="Script" uid="uid://b0qb0ur4fjs06" path="res://Scripts/flag.gd" id="1_i6t4d"]
+[ext_resource type="FontFile" uid="uid://d32ed5s5meq65" path="res://Assets/fonts/nokiafc22.ttf" id="3_xtjk2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6t4d"]
 size = Vector2(31, 111)
+
+[sub_resource type="Animation" id="Animation_i6t4d"]
+resource_name = "dim"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157)]
+}
+
+[sub_resource type="Animation" id="Animation_xtjk2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xtjk2"]
+_data = {
+&"RESET": SubResource("Animation_xtjk2"),
+&"dim": SubResource("Animation_i6t4d")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsrnx"]
+font = ExtResource("3_xtjk2")
+font_size = 24
 
 [node name="flag" type="Area2D"]
 collision_mask = 33
@@ -19,4 +61,25 @@ texture = ExtResource("1_1hkyp")
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_i6t4d")
 
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xtjk2")
+}
+
+[node name="CooldownLabel" type="Label" parent="."]
+visible = false
+offset_left = -21.0
+offset_top = -92.0
+offset_right = 27.0
+offset_bottom = -52.0
+text = "20"
+label_settings = SubResource("LabelSettings_wsrnx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
