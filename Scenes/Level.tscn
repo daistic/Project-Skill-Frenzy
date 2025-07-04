@@ -14,7 +14,7 @@ script = ExtResource("1_vsvp5")
 position = Vector2(572, 635)
 scale = Vector2(40, 2)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="bottom"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -27,7 +27,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 position = Vector2(240, 600)
 scale = Vector2(20, 3)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="bottom2"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 position = Vector2(545, 587)
 scale = Vector2(1, 1.5)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="bottom3"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -52,7 +52,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 [node name="Jump" type="StaticBody2D" parent="." groups=["EnemyJump"]]
 position = Vector2(545, 568)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Jump"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -64,7 +64,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 [node name="Jump2" type="StaticBody2D" parent="." groups=["EnemyJump"]]
 position = Vector2(603, 619)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Jump2"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -77,7 +77,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 position = Vector2(572, -11)
 scale = Vector2(40, 1)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Top"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -91,7 +91,7 @@ position = Vector2(-6, 235)
 rotation = 1.5708
 scale = Vector2(40, 1)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Left"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -105,7 +105,7 @@ position = Vector2(1158, 256)
 rotation = 1.5708
 scale = Vector2(40, 1)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Right"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -118,7 +118,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 position = Vector2(858, 416)
 scale = Vector2(12.5, 1)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Middle"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -130,7 +130,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 [node name="Jump3" type="StaticBody2D" parent="." groups=["EnemyJump"]]
 position = Vector2(701, 416)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Jump3"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -144,7 +144,7 @@ position = Vector2(409, 278)
 rotation = 0.610865
 scale = Vector2(6, 1)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Middle2"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -157,7 +157,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 position = Vector2(353, 239)
 rotation = 0.610865
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Jump4"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)
@@ -170,7 +170,7 @@ shape = SubResource("RectangleShape2D_0ba56")
 position = Vector2(177, 222)
 scale = Vector2(8, 1)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 61
 
 [node name="Sprite2D" type="Sprite2D" parent="Middle3"]
 modulate = Color(0.85098, 0.341176, 0.388235, 1)

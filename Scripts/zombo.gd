@@ -8,10 +8,12 @@ class_name Zombo
 @onready var timer: Timer = $ScoreLabel/Timer
 
 @export var health: int = 1
+@export var damage: int = 7
 @export var points: int = 125
 @export var _move_speed: float = 125.0
 @export var _acceleration_force: float = 100.0
 @export var _jump_power: float = 650.0
+
 var _move_direction: int = -1
 
 func _physics_process(_delta: float) -> void:
@@ -28,6 +30,8 @@ func _on_body_entered(body: Node) -> void:
 		_move_direction = -_move_direction
 	if body.is_in_group("EnemyJump"):
 		jump()
+	if body is Roblox:
+		body.hit(damage)
 
 func jump() -> void:
 	apply_central_impulse(Vector2(0, -_jump_power))

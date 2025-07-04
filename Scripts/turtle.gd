@@ -8,6 +8,7 @@ class_name Turtle
 @onready var timer: Timer = $ScoreLabel/Timer
 
 @export var health: int = 1
+@export var damage: int = 8
 @export var points: int = 225
 @export var _move_speed: float = 225.0
 @export var _acceleration_force: float = 100.0
@@ -34,6 +35,8 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Wall"):
 		_move_direction = -_move_direction
 		apply_central_impulse(Vector2(0, -_flap_power))
+	if body is Roblox:
+		body.hit(damage)
 
 func hit() -> void:
 	health -= 1

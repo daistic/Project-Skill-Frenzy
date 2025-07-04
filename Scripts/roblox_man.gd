@@ -5,6 +5,8 @@ class_name Roblox
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sword: Sword = $Sword
 @onready var action_timer: Timer = $ActionTimer
+@onready var invincible_timer: Timer = $InvincibleTimer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var walk_direction: float = 0.0
 var skills: Array[PackedScene] = []
@@ -103,8 +105,25 @@ func _use_skill_two() -> void:
 		
 		skills.remove_at(1)
 
+func hit(damage: int) -> void:
+	animation_player.play("invincible")
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(6, true)
+	set_collision_mask_value(4, false)
+	invincible_timer.start()
+	
+	GameManager.player_health -= damage
+	if GameManager.player_health > 0:
+		SignalHub.emit_on_player_hit()
+
 func _print_debug() -> void:
 	print(skills)
 
 func _on_action_timer_timeout() -> void:
 	can_act = true
+
+func _on_invincible_timer_timeout() -> void:
+	set_collision_layer_value(1, true)
+	set_collision_layer_value(6, false)
+	set_collision_mask_value(4, true)
+	animation_player.play("RESET")
