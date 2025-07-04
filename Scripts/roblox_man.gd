@@ -27,6 +27,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug"):
 		_print_debug()
 
+func _enter_tree() -> void:
+	SignalHub.on_skill_count_achieved.connect(get_random_skill)
+
+func _ready() -> void:
+	await SignalHub.on_gameui_ready
+	get_random_skill()
+	get_random_skill()
+
 func _process(_delta: float) -> void:
 	_handle_animations()
 
@@ -73,11 +81,8 @@ func _normal_attack() -> void:
 	can_act = false
 	await get_tree().create_timer(sword_show_timer).timeout
 	sword.hide()
+	sword.turn_off_collision()
 	action_timer.start()
-
-func store_skill(skill_scene: PackedScene) -> void:
-	if skills.size() < MAX_SKILL_AMOUNT:
-		skills.append(skill_scene)
 
 func _use_skill_one() -> void:
 	if skills.size() >= 1:
@@ -90,7 +95,7 @@ func _use_skill_one() -> void:
 			instance.position = position
 			get_tree().root.add_child(instance)
 		
-		skills.remove_at(0)
+		_remove_skill(0)
 
 func _use_skill_two() -> void:
 	if skills.size() >= 2:
@@ -103,7 +108,11 @@ func _use_skill_two() -> void:
 			instance.position = position
 			get_tree().root.add_child(instance)
 		
-		skills.remove_at(1)
+		_remove_skill(1)
+
+func _remove_skill(index: int) -> void:
+	skills.remove_at(index)
+	SignalHub.emit_on_skill_get(skills)
 
 func hit(damage: int) -> void:
 	animation_player.play("invincible")
@@ -116,7 +125,20 @@ func hit(damage: int) -> void:
 	if GameManager.player_health > 0:
 		SignalHub.emit_on_player_hit()
 
+func _store_skill(skill_scene: PackedScene) -> void:
+	if skills.size() < MAX_SKILL_AMOUNT:
+		skills.append(skill_scene)
+	else:
+		skills.pop_front()
+		skills.append(skill_scene)
+	
+	SignalHub.emit_on_skill_get(skills)
+
+func get_random_skill() -> void:
+	_store_skill(GameManager.SKILLS.pick_random())
+
 func _print_debug() -> void:
+	get_random_skill()
 	print(skills)
 
 func _on_action_timer_timeout() -> void:

@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjiywmephhpw3"]
+[gd_scene load_steps=7 format=3 uid="uid://cjiywmephhpw3"]
 
 [ext_resource type="Script" uid="uid://517irihkg2be" path="res://Scripts/gameplay_ui.gd" id="1_oy2l7"]
 [ext_resource type="LabelSettings" uid="uid://fcidta4ckk5i" path="res://Resources/White_32.tres" id="2_oy2l7"]
+[ext_resource type="Texture2D" uid="uid://dqmf6a3y5ldfd" path="res://Assets/cards/chainsaw_card.png" id="3_ccu41"]
+[ext_resource type="Texture2D" uid="uid://baeity8rdjdw3" path="res://Assets/cards/fireball_card.png" id="4_0ojee"]
+[ext_resource type="FontFile" uid="uid://d32ed5s5meq65" path="res://Assets/fonts/nokiafc22.ttf" id="5_0ojee"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fkhpb"]
+font = ExtResource("5_0ojee")
+font_size = 24
 
 [node name="GameplayUI" type="Control"]
 layout_mode = 3
@@ -37,3 +44,21 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "100%"
 label_settings = ExtResource("2_oy2l7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="SkillOneRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_ccu41")
+
+[node name="SkillTwoRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_0ojee")
+
+[node name="SkillInLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Skill In: 3"
+label_settings = SubResource("LabelSettings_fkhpb")

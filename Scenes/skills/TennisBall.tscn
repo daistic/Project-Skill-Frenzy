@@ -19,6 +19,7 @@ contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_nudrs")
 impulse = Vector2(600, -250)
+skill_index = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
