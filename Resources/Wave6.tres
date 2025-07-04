@@ -8,5 +8,5 @@
 
 [resource]
 script = ExtResource("2_pa0y4")
-enemies = Array[PackedScene]([ExtResource("1_2j7il"), ExtResource("2_7ud0c"), ExtResource("1_apmnk"), ExtResource("1_apmnk"), ExtResource("4_cytpw")])
+enemies = Array[PackedScene]([ExtResource("1_2j7il"), ExtResource("2_7ud0c"), ExtResource("1_apmnk"), ExtResource("4_cytpw")])
 metadata/_custom_type_script = "uid://bjrev8473hl3p"

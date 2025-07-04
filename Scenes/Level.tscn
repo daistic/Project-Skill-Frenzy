@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cspw8yq76068a" path="res://Assets/white_texture.png" id="1_337u7"]
 [ext_resource type="Script" uid="uid://lugymtf71peh" path="res://Scripts/level.gd" id="1_vsvp5"]
-[ext_resource type="Texture2D" uid="uid://cowkq6ds430pl" path="res://Assets/portal.png" id="3_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://w0wwlk35ky26" path="res://Scenes/Portal.tscn" id="3_8rbpu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ba56"]
 size = Vector2(32, 32)
@@ -140,7 +140,7 @@ texture = ExtResource("1_337u7")
 shape = SubResource("RectangleShape2D_0ba56")
 
 [node name="Middle2" type="StaticBody2D" parent="."]
-position = Vector2(400, 290)
+position = Vector2(409, 278)
 rotation = 0.610865
 scale = Vector2(6, 1)
 collision_layer = 2
@@ -154,7 +154,7 @@ texture = ExtResource("1_337u7")
 shape = SubResource("RectangleShape2D_0ba56")
 
 [node name="Jump4" type="StaticBody2D" parent="." groups=["EnemyJump"]]
-position = Vector2(400, 290)
+position = Vector2(353, 239)
 rotation = 0.610865
 collision_layer = 2
 collision_mask = 13
@@ -179,48 +179,15 @@ texture = ExtResource("1_337u7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Middle3"]
 shape = SubResource("RectangleShape2D_0ba56")
 
-[node name="Portal" type="Sprite2D" parent="."]
-texture_filter = 1
+[node name="Portal" parent="." instance=ExtResource("3_8rbpu")]
 position = Vector2(113, 298)
-texture = ExtResource("3_8rbpu")
 
-[node name="WaveTimer" type="Timer" parent="Portal"]
-wait_time = 7.0
-one_shot = true
+[node name="Portal2" parent="." instance=ExtResource("3_8rbpu")]
+position = Vector2(1092, 478)
+wave_time = 15.0
+spawn_time = 5.0
 
-[node name="SpawnTimer" type="Timer" parent="Portal"]
-wait_time = 2.0
-one_shot = true
-
-[node name="Portal2" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1092, 482)
-texture = ExtResource("3_8rbpu")
-
-[node name="WaveTimer" type="Timer" parent="Portal2"]
-wait_time = 6.5
-one_shot = true
-
-[node name="SpawnTimer" type="Timer" parent="Portal2"]
-wait_time = 2.33
-one_shot = true
-
-[node name="Portal3" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(487, 56)
-texture = ExtResource("3_8rbpu")
-
-[node name="WaveTimer" type="Timer" parent="Portal3"]
-wait_time = 6.0
-one_shot = true
-
-[node name="SpawnTimer" type="Timer" parent="Portal3"]
-wait_time = 2.5
-one_shot = true
-
-[connection signal="timeout" from="Portal/WaveTimer" to="." method="_on_portal_wave_timer_timeout"]
-[connection signal="timeout" from="Portal/SpawnTimer" to="." method="_on_portal_spawn_timer_timeout"]
-[connection signal="timeout" from="Portal2/WaveTimer" to="." method="_on_portal2_wave_timer_timeout"]
-[connection signal="timeout" from="Portal2/SpawnTimer" to="." method="_on_portal2_spawn_timer_timeout"]
-[connection signal="timeout" from="Portal3/WaveTimer" to="." method="_on_portal3_wave_timer_timeout"]
-[connection signal="timeout" from="Portal3/SpawnTimer" to="." method="_on_portal3_spawn_timer_timeout"]
+[node name="Portal3" parent="." instance=ExtResource("3_8rbpu")]
+position = Vector2(493, 62)
+wave_time = 12.5
+spawn_time = 6.0

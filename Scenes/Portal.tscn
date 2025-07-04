@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://w0wwlk35ky26"]
+
+[ext_resource type="Texture2D" uid="uid://cowkq6ds430pl" path="res://Assets/portal.png" id="1_lvd5j"]
+[ext_resource type="Script" uid="uid://480qknx5r3sd" path="res://Scripts/portal.gd" id="2_mdgx6"]
+
+[node name="Portal" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_lvd5j")
+script = ExtResource("2_mdgx6")
+
+[node name="WaveTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
