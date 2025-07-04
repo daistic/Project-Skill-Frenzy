@@ -8,3 +8,5 @@ extends Node
 	preload("res://Resources/Wave5.tres"),
 	preload("res://Resources/Wave6.tres")
 ]
+
+var score: int = 0

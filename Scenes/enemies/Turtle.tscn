@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://by3cejdflsnuy"]
+[gd_scene load_steps=10 format=3 uid="uid://by3cejdflsnuy"]
 
 [ext_resource type="Script" uid="uid://dbg50dibqcl47" path="res://Scripts/turtle.gd" id="1_7tjtx"]
 [ext_resource type="Texture2D" uid="uid://dnvqocodp8kwj" path="res://Assets/turtles/flying_turtle.png" id="1_ulmdh"]
+[ext_resource type="FontFile" uid="uid://d32ed5s5meq65" path="res://Assets/fonts/nokiafc22.ttf" id="3_cqew4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ulmdh"]
 friction = 0.0
@@ -32,6 +33,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ulmdh"]
 radius = 21.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_16ehl"]
+font = ExtResource("3_cqew4")
+font_size = 12
+
 [node name="turtle" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 7
@@ -39,7 +44,7 @@ physics_material_override = SubResource("PhysicsMaterial_ulmdh")
 gravity_scale = 0.75
 lock_rotation = true
 contact_monitor = true
-max_contacts_reported = 3
+max_contacts_reported = 4
 script = ExtResource("1_7tjtx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -51,5 +56,16 @@ autoplay = "flying"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ulmdh")
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "225"
+label_settings = SubResource("LabelSettings_16ehl")
+
+[node name="Timer" type="Timer" parent="ScoreLabel"]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

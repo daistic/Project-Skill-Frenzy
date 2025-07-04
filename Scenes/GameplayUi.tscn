@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://cjiywmephhpw3"]
+[gd_scene load_steps=3 format=3 uid="uid://cjiywmephhpw3"]
+
+[ext_resource type="Script" uid="uid://517irihkg2be" path="res://Scripts/gameplay_ui.gd" id="1_oy2l7"]
+[ext_resource type="LabelSettings" uid="uid://fcidta4ckk5i" path="res://Resources/White_32.tres" id="2_oy2l7"]
 
 [node name="GameplayUI" type="Control"]
 layout_mode = 3
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oy2l7")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -15,3 +19,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "000000"
+label_settings = ExtResource("2_oy2l7")
+
+[node name="HealthLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "100%"
+label_settings = ExtResource("2_oy2l7")

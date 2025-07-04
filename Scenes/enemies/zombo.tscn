@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwoh1tyj2o5dx"]
+[gd_scene load_steps=10 format=3 uid="uid://dwoh1tyj2o5dx"]
 
 [ext_resource type="Script" uid="uid://c3m1r06vqwhgw" path="res://Scripts/zombo.gd" id="1_8ei1b"]
 [ext_resource type="PhysicsMaterial" uid="uid://5w0rprejsnxl" path="res://Resources/zombo_physics_materials.tres" id="1_j0pxb"]
 [ext_resource type="Texture2D" uid="uid://dd5een7448i8q" path="res://Assets/Zombo/zombo.png" id="1_o2tnt"]
+[ext_resource type="FontFile" uid="uid://d32ed5s5meq65" path="res://Assets/fonts/nokiafc22.ttf" id="4_bhi5d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofxau"]
 atlas = ExtResource("1_o2tnt")
@@ -30,13 +31,17 @@ animations = [{
 radius = 26.0
 height = 68.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_b3yg0"]
+font = ExtResource("4_bhi5d")
+font_size = 12
+
 [node name="Zombo" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 7
 physics_material_override = ExtResource("1_j0pxb")
 lock_rotation = true
 contact_monitor = true
-max_contacts_reported = 3
+max_contacts_reported = 4
 script = ExtResource("1_8ei1b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -49,5 +54,16 @@ autoplay = "walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_ofxau")
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "225"
+label_settings = SubResource("LabelSettings_b3yg0")
+
+[node name="Timer" type="Timer" parent="ScoreLabel"]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

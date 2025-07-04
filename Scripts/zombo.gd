@@ -3,6 +3,9 @@ extends RigidBody2D
 class_name Zombo
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var score_label: Label = $ScoreLabel
+@onready var timer: Timer = $ScoreLabel/Timer
 
 @export var health: int = 1
 @export var points: int = 125
@@ -34,3 +37,19 @@ func _handle_sprite_facing() -> void:
 		animated_sprite_2d.flip_h = false
 	if _move_direction == 1:
 		animated_sprite_2d.flip_h = true
+
+func hit() -> void:
+	health -= 1
+	if health <= 0:
+		call_deferred("_die")
+	print(health)
+
+func _die() -> void:
+	SignalHub.emit_on_point_scored(points)
+	animated_sprite_2d.visible = false
+	freeze = true
+	collision_shape_2d.disabled = true
+	score_label.visible = true
+	timer.start()
+	await timer.timeout
+	queue_free()

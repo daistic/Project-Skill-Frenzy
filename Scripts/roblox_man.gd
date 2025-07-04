@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Roblox
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var sword: Area2D = $Sword
+@onready var sword: Sword = $Sword
 @onready var action_timer: Timer = $ActionTimer
 
 var walk_direction: float = 0.0
@@ -66,7 +66,8 @@ func _handle_sprite_facing() -> void:
 		sword.scale.x = -1.0
 
 func _normal_attack() -> void:
-	sword.show()
+	sword.visible = true
+	sword.turn_on_collision()
 	can_act = false
 	await get_tree().create_timer(sword_show_timer).timeout
 	sword.hide()
@@ -79,7 +80,7 @@ func store_skill(skill_scene: PackedScene) -> void:
 func _use_skill_one() -> void:
 	if skills.size() >= 1:
 		var instance = skills[0].instantiate()
-		if instance is ProjectileSkill:
+		if instance is ObjectSkill:
 			instance.projectile_facing_right = !animated_sprite_2d.flip_h
 			instance.position = position
 			get_tree().root.add_child(instance)
@@ -92,7 +93,7 @@ func _use_skill_one() -> void:
 func _use_skill_two() -> void:
 	if skills.size() >= 2:
 		var instance = skills[1].instantiate()
-		if instance is ProjectileSkill:
+		if instance is ObjectSkill:
 			instance.projectile_facing_right = !animated_sprite_2d.flip_h
 			instance.position = position
 			get_tree().root.add_child(instance)

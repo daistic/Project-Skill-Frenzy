@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgu4acnx1l67h"]
+[gd_scene load_steps=4 format=3 uid="uid://cgu4acnx1l67h"]
 
+[ext_resource type="Script" uid="uid://pim52f4tb1cp" path="res://Scripts/sword.gd" id="1_hthk4"]
 [ext_resource type="Texture2D" uid="uid://bvkb5ppvrpcwq" path="res://Assets/skills/sword.png" id="1_suca6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vnlp2"]
@@ -9,6 +10,7 @@ height = 66.0
 [node name="Sword" type="Area2D"]
 collision_layer = 4
 collision_mask = 8
+script = ExtResource("1_hthk4")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -20,3 +22,6 @@ texture = ExtResource("1_suca6")
 position = Vector2(72, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vnlp2")
+disabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

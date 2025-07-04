@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://fcidta4ckk5i"]
+
+[ext_resource type="FontFile" uid="uid://d32ed5s5meq65" path="res://Assets/fonts/nokiafc22.ttf" id="1_ux6hj"]
+
+[resource]
+font = ExtResource("1_ux6hj")
+font_size = 32

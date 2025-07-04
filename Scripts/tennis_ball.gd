@@ -1,4 +1,4 @@
-extends ProjectileSkill
+extends ObjectSkill
 
 @onready var rigidbody: RigidBody2D = $"."
 
@@ -13,3 +13,10 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+func _on_body_entered(body: Node) -> void:
+	if body is StaticBody2D:
+		return
+	
+	if body is Zombo || Turtle:
+		body.hit()
