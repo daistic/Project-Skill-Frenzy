@@ -1,5 +1,9 @@
 extends Node
 
+const MAIN = preload("res://Scenes/MainMenu.tscn")
+const LEVEL_BASE = preload("res://Scenes/LevelBase.tscn")
+const GAME_OVER = preload("res://Scenes/GameOver.tscn")
+
 const WAVES: Array[WaveResource] = [
 	preload("res://Resources/Wave1.tres"),
 	preload("res://Resources/Wave2.tres"),

@@ -5,6 +5,11 @@ extends Area2D
 @onready var cooldown_label: Label = $CooldownLabel
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@export var cooldown_time: float = 20.0
+
+func _ready() -> void:
+	cooldown_timer.wait_time = cooldown_time
+
 func _process(_delta: float) -> void:
 	cooldown_label.text = str(int(cooldown_timer.time_left))
 

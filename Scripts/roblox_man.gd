@@ -24,6 +24,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		_use_skill_one()
 	if event.is_action_pressed("skill_two") and can_act:
 		_use_skill_two()
+	if event.is_action_pressed("escape"):
+		get_tree().change_scene_to_packed(GameManager.GAME_OVER)
 	if event.is_action_pressed("debug"):
 		_print_debug()
 
@@ -124,6 +126,13 @@ func hit(damage: int) -> void:
 	GameManager.player_health -= damage
 	if GameManager.player_health > 0:
 		SignalHub.emit_on_player_hit()
+	else:
+		set_collision_layer_value(1, false)
+		set_collision_layer_value(6, true)
+		set_collision_mask_value(4, false)
+		animation_player.play("death")
+		await animation_player.animation_finished
+		get_tree().change_scene_to_packed(GameManager.GAME_OVER)
 
 func _store_skill(skill_scene: PackedScene) -> void:
 	if skills.size() < MAX_SKILL_AMOUNT:

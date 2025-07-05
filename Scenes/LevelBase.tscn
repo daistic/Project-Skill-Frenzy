@@ -25,6 +25,7 @@ position = Vector2(1017, 338)
 
 [node name="flag2" parent="." instance=ExtResource("4_dci62")]
 position = Vector2(87, 143)
+cooldown_time = 30.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
