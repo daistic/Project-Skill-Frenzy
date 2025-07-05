@@ -7,6 +7,7 @@ class_name Roblox
 @onready var action_timer: Timer = $ActionTimer
 @onready var invincible_timer: Timer = $InvincibleTimer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var hit_audio: AudioStreamPlayer2D = $HitAudio
 
 var walk_direction: float = 0.0
 var skills: Array[PackedScene] = []
@@ -117,6 +118,7 @@ func _remove_skill(index: int) -> void:
 	SignalHub.emit_on_skill_get(skills)
 
 func hit(damage: int) -> void:
+	hit_audio.play()
 	animation_player.play("invincible")
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(6, true)

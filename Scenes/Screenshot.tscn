@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4ofm6ya0jr60"]
+
+[ext_resource type="Texture2D" uid="uid://cspw8yq76068a" path="res://Assets/white_texture.png" id="1_tnt28"]
+[ext_resource type="Texture2D" uid="uid://dc00fkysaud7v" path="res://Assets/roblox man srpite sheet.png" id="2_6qpa5"]
+[ext_resource type="PackedScene" uid="uid://cjinrdxcjoc5i" path="res://Scenes/skills/Chainsaw.tscn" id="3_bckk4"]
+[ext_resource type="Texture2D" uid="uid://di87qjssf7rci" path="res://icon.svg" id="4_8rei2"]
+[ext_resource type="PackedScene" uid="uid://gvx18nkpacwq" path="res://Scenes/LevelBase.tscn" id="5_6tlrx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a0f7"]
+atlas = ExtResource("2_6qpa5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6peae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a0f7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.356863, 0.431373, 0.882353, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tnt28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(342, 411)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_6peae")
+
+[node name="chainsaw" parent="." instance=ExtResource("3_bckk4")]
+position = Vector2(420, 394)
+script = null
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(526, 407)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_8rei2")
+
+[node name="LevelBase" parent="." instance=ExtResource("5_6tlrx")]
+position = Vector2(-189, -105)
