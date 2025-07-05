@@ -5,9 +5,7 @@ extends Area2D
 @onready var cooldown_label: Label = $CooldownLabel
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-@export var _test_skill_scene: PackedScene
-
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	cooldown_label.text = str(int(cooldown_timer.time_left))
 
 func _start_cooldown() -> void:

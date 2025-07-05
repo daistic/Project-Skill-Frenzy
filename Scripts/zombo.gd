@@ -57,3 +57,6 @@ func _die() -> void:
 	timer.start()
 	await timer.timeout
 	queue_free()
+
+func _on_lifetime_timer_timeout() -> void:
+	queue_free()

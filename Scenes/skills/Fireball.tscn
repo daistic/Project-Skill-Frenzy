@@ -52,7 +52,7 @@ height = 54.0
 [node name="fireball" type="Area2D"]
 scale = Vector2(2, 2)
 collision_layer = 4
-collision_mask = 10
+collision_mask = 26
 script = ExtResource("1_dju2h")
 move_speed = 550.0
 skill_index = 1

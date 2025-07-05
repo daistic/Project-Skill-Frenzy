@@ -12,7 +12,7 @@ radius = 18.0
 
 [node name="Tennis ball" type="RigidBody2D"]
 collision_layer = 4
-collision_mask = 10
+collision_mask = 26
 physics_material_override = SubResource("PhysicsMaterial_fdwen")
 gravity_scale = 0.0
 contact_monitor = true
