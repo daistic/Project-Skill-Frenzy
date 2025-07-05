@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://chsbar3gxlwj7"]
+[gd_scene load_steps=6 format=3 uid="uid://chsbar3gxlwj7"]
 
 [ext_resource type="Texture2D" uid="uid://cspw8yq76068a" path="res://Assets/white_texture.png" id="1_ktc4i"]
 [ext_resource type="Script" uid="uid://eisw07fpwd0l" path="res://Scripts/game_over.gd" id="1_uib17"]
 [ext_resource type="LabelSettings" uid="uid://cd3gblfdt4lhy" path="res://Resources/white_64.tres" id="2_uib17"]
 [ext_resource type="LabelSettings" uid="uid://bgfo5b7ewsqes" path="res://Resources/black_24.tres" id="3_rdiyk"]
+[ext_resource type="AudioStream" uid="uid://bt06l41432oel" path="res://Assets/SFX/[Game Over] Music by Kim Lightyear from Pixabay.mp3" id="5_rdiyk"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -65,5 +66,10 @@ text = "Main Menu"
 label_settings = ExtResource("3_rdiyk")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rdiyk")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

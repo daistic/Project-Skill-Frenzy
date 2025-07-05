@@ -181,13 +181,14 @@ shape = SubResource("RectangleShape2D_0ba56")
 
 [node name="Portal" parent="." instance=ExtResource("3_8rbpu")]
 position = Vector2(113, 298)
+wave_time = 12.0
 
 [node name="Portal2" parent="." instance=ExtResource("3_8rbpu")]
 position = Vector2(1092, 478)
-wave_time = 15.0
+wave_time = 10.5
 spawn_time = 5.0
 
 [node name="Portal3" parent="." instance=ExtResource("3_8rbpu")]
 position = Vector2(493, 62)
-wave_time = 12.5
+wave_time = 11.0
 spawn_time = 6.0
