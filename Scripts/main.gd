@@ -7,6 +7,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		margin_container.visible = false
 
 func _on_start_button_pressed() -> void:
+	GameManager.score = 0
 	get_tree().change_scene_to_packed(GameManager.LEVEL_BASE)
 
 func _on_credits_button_2_pressed() -> void:
