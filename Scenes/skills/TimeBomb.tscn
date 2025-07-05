@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2koxl0mhnc5w"]
+[gd_scene load_steps=12 format=3 uid="uid://c2koxl0mhnc5w"]
 
 [ext_resource type="Texture2D" uid="uid://dvj80qgcxatnu" path="res://Assets/skills/time_bomb.png" id="1_03fun"]
 [ext_resource type="Script" uid="uid://ht6l5n3inf87" path="res://Scripts/time_bomb.gd" id="1_c4oek"]
 [ext_resource type="Texture2D" uid="uid://u2e7khdt2fg0" path="res://Assets/skills/explosion 1.png" id="2_bkyvt"]
 [ext_resource type="Texture2D" uid="uid://sbaxtnqyg07q" path="res://Assets/skills/explosion 2.png" id="3_c4oek"]
 [ext_resource type="Texture2D" uid="uid://dg13uqitft62u" path="res://Assets/skills/explosion 3.png" id="4_eeme7"]
+[ext_resource type="AudioStream" uid="uid://cg7ayj1m1c8nm" path="res://Assets/SFX/[Beeping] Sound Effect by freesound_community from Pixabay.mp3" id="6_j51yd"]
+[ext_resource type="AudioStream" uid="uid://d0ujlnjh2s6k4" path="res://Assets/SFX/[Explosion] Sound Effect by Ahmed Abudlaal from Pixabay.mp3" id="7_ov5y7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bkyvt"]
 radius = 81.0555
@@ -26,7 +28,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_c4oek"]
 resource_name = "ticking"
-length = 3.0
+length = 3.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -35,11 +37,26 @@ tracks/0/path = NodePath("Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8, 1, 1.1, 1.8, 2, 2.1, 2.8, 3),
+"times": PackedFloat32Array(0, 0.8, 1, 1.1, 1.8, 2, 2.1, 2.8, 3.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.231373, 0.819608, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.231373, 0.819608, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.231373, 0.819608, 1, 1)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BeepingAudio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.9849,
+"stream": ExtResource("6_j51yd")
+}],
+"times": PackedFloat32Array(0.75)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_idl20"]
 _data = {
@@ -117,6 +134,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_idl20")
 }
 autoplay = "ticking"
+
+[node name="BeepingAudio" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[node name="ExplosionAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ov5y7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,5 +1,7 @@
 extends ObjectSkill
 
+@onready var hit_audio: AudioStreamPlayer2D = $HitAudio
+
 @export var initial_speed: float = 300.0 
 @export var initial_vertical_velocity: float = -200.0 
 
@@ -28,4 +30,5 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if body is Zombo || Turtle:
 		body.hit()
+		hit_audio.play()
 		GameManager.count_to_skill()

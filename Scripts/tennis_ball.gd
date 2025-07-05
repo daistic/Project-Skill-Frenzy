@@ -1,6 +1,7 @@
 extends ObjectSkill
 
 @onready var rigidbody: RigidBody2D = $"."
+@onready var hit_audio: AudioStreamPlayer2D = $HitAudio
 
 @export var impulse: Vector2 = Vector2(125.0, -250.0)
 
@@ -20,4 +21,5 @@ func _on_body_entered(body: Node) -> void:
 	
 	if body is Zombo || Turtle:
 		body.hit()
+		hit_audio.play()
 		GameManager.count_to_skill()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0ujlnjh2s6k4"
+path="res://.godot/imported/[Explosion] Sound Effect by Ahmed Abudlaal from Pixabay.mp3-0d6255f9481d396afb9466beb14e27b1.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/[Explosion] Sound Effect by Ahmed Abudlaal from Pixabay.mp3"
+dest_files=["res://.godot/imported/[Explosion] Sound Effect by Ahmed Abudlaal from Pixabay.mp3-0d6255f9481d396afb9466beb14e27b1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

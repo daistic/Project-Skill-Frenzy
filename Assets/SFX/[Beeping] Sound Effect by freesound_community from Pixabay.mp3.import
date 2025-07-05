@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg7ayj1m1c8nm"
+path="res://.godot/imported/[Beeping] Sound Effect by freesound_community from Pixabay.mp3-02fd2ace5b3984c1b129cdf8434c03b5.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/[Beeping] Sound Effect by freesound_community from Pixabay.mp3"
+dest_files=["res://.godot/imported/[Beeping] Sound Effect by freesound_community from Pixabay.mp3-02fd2ace5b3984c1b129cdf8434c03b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

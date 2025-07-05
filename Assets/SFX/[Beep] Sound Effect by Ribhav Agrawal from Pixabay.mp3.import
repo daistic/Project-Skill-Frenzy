@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfvm5tqy3br4w"
+path="res://.godot/imported/[Beep] Sound Effect by Ribhav Agrawal from Pixabay.mp3-40fc75b27bd762e038d23367ad8c8529.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/[Beep] Sound Effect by Ribhav Agrawal from Pixabay.mp3"
+dest_files=["res://.godot/imported/[Beep] Sound Effect by Ribhav Agrawal from Pixabay.mp3-40fc75b27bd762e038d23367ad8c8529.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

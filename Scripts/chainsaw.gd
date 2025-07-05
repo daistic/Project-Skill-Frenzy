@@ -1,6 +1,8 @@
 extends ObjectSkill
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hit_audio: AudioStreamPlayer2D = $HitAudio
+
 @export var move_speed: float = 50.0
 
 func _ready() -> void:
@@ -21,4 +23,5 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if body is Zombo || Turtle:
 		body.hit()
+		hit_audio.play()
 		GameManager.count_to_skill()

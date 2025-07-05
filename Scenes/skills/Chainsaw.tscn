@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjinrdxcjoc5i"]
+[gd_scene load_steps=15 format=3 uid="uid://cjinrdxcjoc5i"]
 
 [ext_resource type="Script" uid="uid://bs4kyce6ithed" path="res://Scripts/chainsaw.gd" id="1_0ssji"]
 [ext_resource type="Texture2D" uid="uid://mngm17rgt5ua" path="res://Assets/skills/chainsaw_projectile.png" id="1_jcl7s"]
+[ext_resource type="AudioStream" uid="uid://cfvm5tqy3br4w" path="res://Assets/SFX/[Beep] Sound Effect by Ribhav Agrawal from Pixabay.mp3" id="3_3tkpq"]
+[ext_resource type="AudioStream" uid="uid://i11ncq38uonh" path="res://Assets/SFX/[Whoosh] Sound Effet by Jurij form Pixabay.mp3" id="4_svlto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ssji"]
 atlas = ExtResource("1_jcl7s")
@@ -99,5 +101,12 @@ autoplay = "flying"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ynx84")
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3tkpq")
+
+[node name="WhooshAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_svlto")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

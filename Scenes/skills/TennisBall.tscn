@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw0en64ltcn0h"]
+[gd_scene load_steps=7 format=3 uid="uid://bw0en64ltcn0h"]
 
 [ext_resource type="Script" uid="uid://detjcykhp1x0d" path="res://Scripts/tennis_ball.gd" id="1_nudrs"]
 [ext_resource type="Texture2D" uid="uid://cdgwdytk4qtoi" path="res://Assets/skills/tennis_ball.png" id="2_fdwen"]
+[ext_resource type="AudioStream" uid="uid://cfvm5tqy3br4w" path="res://Assets/SFX/[Beep] Sound Effect by Ribhav Agrawal from Pixabay.mp3" id="3_ivq2c"]
+[ext_resource type="AudioStream" uid="uid://dahrxrlxla504" path="res://Assets/SFX/[Tennis] Sound Effect by Jurij from Pixabay.mp3" id="4_43nqe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdwen"]
 friction = 0.0
@@ -33,6 +35,13 @@ shape = SubResource("CircleShape2D_fdwen")
 wait_time = 5.5
 one_shot = true
 autostart = true
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ivq2c")
+
+[node name="TennisAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_43nqe")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

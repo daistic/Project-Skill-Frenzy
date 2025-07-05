@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4hycykf3pkmc"]
+[gd_scene load_steps=8 format=3 uid="uid://b4hycykf3pkmc"]
 
 [ext_resource type="Script" uid="uid://dd30mdl50a6m2" path="res://Scripts/arch.gd" id="1_h0we4"]
 [ext_resource type="Texture2D" uid="uid://bi8xi56a63yw3" path="res://Assets/skills/purple_hook.png" id="2_fikqw"]
+[ext_resource type="AudioStream" uid="uid://i11ncq38uonh" path="res://Assets/SFX/[Whoosh] Sound Effet by Jurij form Pixabay.mp3" id="3_fikqw"]
+[ext_resource type="AudioStream" uid="uid://cfvm5tqy3br4w" path="res://Assets/SFX/[Beep] Sound Effect by Ribhav Agrawal from Pixabay.mp3" id="4_o2cwu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cb8h1"]
 size = Vector2(48.5, 47)
@@ -52,6 +54,13 @@ libraries = {
 autoplay = "flying"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="WhooshAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fikqw")
+autoplay = true
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_o2cwu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

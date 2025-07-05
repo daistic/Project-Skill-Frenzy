@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccjm646e718rx"]
+[gd_scene load_steps=11 format=3 uid="uid://ccjm646e718rx"]
 
 [ext_resource type="Script" uid="uid://bgrv1ar48pvl4" path="res://Scripts/fireball.gd" id="1_dju2h"]
 [ext_resource type="Texture2D" uid="uid://b2l58xvc5o2f0" path="res://Assets/skills/fireball.png" id="1_o53bx"]
+[ext_resource type="AudioStream" uid="uid://cfvm5tqy3br4w" path="res://Assets/SFX/[Beep] Sound Effect by Ribhav Agrawal from Pixabay.mp3" id="3_4wl4n"]
+[ext_resource type="AudioStream" uid="uid://dc5cqnmyebx46" path="res://Assets/SFX/[Fireball] Sound Effect by Koi Roylers from Pixabay.mp3" id="4_t8ssa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dju2h"]
 atlas = ExtResource("1_o53bx")
@@ -70,6 +72,13 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_o53bx")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4wl4n")
+
+[node name="FireballAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_t8ssa")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
